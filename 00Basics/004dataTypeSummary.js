@@ -53,3 +53,24 @@ console.log(typeof anotherId);
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
 // null has undefined data-type
+
+// ********************* MEMORY ALLOCATION ******************
+// Memory allocation is done automatically by JS using tools like Garbage collector etc
+
+/* Stack (Primitive) - Copy of orinal values,
+ Heap (Non-Primitive) - Reference to original values, any change done affects the original valus*/
+
+let myName = "himanshu"
+let anotherName = myName;
+anotherName = "chaiaurcode"
+console.log (myName) ;
+console.log (anotherName) ;
+
+let user0ne = {
+    email: "user@google.com",
+    upi:"user@ybl"
+}
+let userTwo = user0ne;
+userTwo.email = "hitesh@google.com";
+console.log (user0ne.email) ;
+console.log (userTwo.email) ;
