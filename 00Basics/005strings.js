@@ -28,7 +28,6 @@ console.log(`${names.toUpperCase()} and ${names2} age: ${age}`); // STRING INTER
 // console.log(str1.trim()); // removes (" spaces ") and " /n ", also accepts 2 parameters trim(start,end)
 
 const url = "https://www.google.com/hell%30o"
-// url.replace('%30','-')
-// console.log(url);
-console.log(url.includes('www'));
+// console.log(url.replace('%30','-'));
+// console.log(url.includes('www'));
 console.log(names2.split("-"));
