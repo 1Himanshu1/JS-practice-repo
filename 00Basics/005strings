@@ -1,6 +1,7 @@
 // 2 ways to declare Strings
 let names = "himanshu";
-let names2 = new String("Pri-yanshu")  // it takes NEW keyword(OBJECTS) and String and actual valu in its constructor - ('')
+let names2 = new String("Pri-yanshu")  // it takes NEW keyword(OBJECTS) and String and actual value in its constructor - ('')
+// it gives "Length" property and "prototype" by default
 const age = 25;
 
 // console.log(name + " age: " + age);  OUTDATED CONCATENATION
