@@ -4,7 +4,7 @@
  1. Object Literals -> 
         const user = {}
  2. Constructor -> it makes singleton object(unique)       
-        const user = Object.create;
+        const user = Object.create; or = new Object;
 */
 
 // Object literals
