@@ -58,8 +58,8 @@
 // #
 // shoppping cart business logic examples
 // function calculateCartPrice(val1, val2, ...num1){ // (...) = [rest or spread] operator (based on usage it is reffered as rest or spread), here it is REST
-//     // also the (...num) returns the "all remaining" values in an array
-//     return val1, val2, num1 // only tha last value is returned i.e, num1 
+//     // also the (...num) returns the "all" values in an array or "all remaining" values if you've already passed a parameter.
+//     Note: return val1, val2, num1 // only tha last value is returned i.e, num1 
 // }
 
 // console.log(calculateCartPrice(200, 400, 500, 2000))
