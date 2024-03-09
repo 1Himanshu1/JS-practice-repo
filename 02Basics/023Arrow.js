@@ -52,7 +52,7 @@ const add = (num1,num2) => {
 } // holding it in a variable
 // console.log(add(2,4));
 
-// 4. Implicit return // no return statement
+// 4. Implicit return // no return statement, curly me return likhna hai, aur brackets me return nahi likhna
 // const sub = (num1,num2) =>  num1 - num2;
 // const sub = (num1,num2) =>  (num1 - num2); // same as above
 // console.log(sub(6,2));
@@ -60,7 +60,7 @@ const add = (num1,num2) => {
 // 5. Returning an OBJECT from arrow function
 // we have to use ( ), and inside it we can pass our object
 // e.g,
-const obj = () => ({userAge: 22})
+const obj = () => ({userAge: 22}) // equivalent to const obj = () => { return {userAge: 22}}
 console.log(obj());
 
 
@@ -81,8 +81,8 @@ const car = {
   },
 };
 
-console.log(car.speed1());  // working giving car obj 
-console.log(car.speed2()); // Giving window obj
+// console.log(car.speed1());  // working giving car obj 
+// console.log(car.speed2()); // Giving window obj
 
 /* 
 The behavior arises due to how regular functions and arrow functions handle the this keyword:
