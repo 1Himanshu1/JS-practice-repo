@@ -60,6 +60,6 @@ function addone(num){ // simple function
 
 // #
 addTwo(5); // HOISTING: throws an error, becuz we've also used a (const addtwo(5))var to store the function inside it  
-let addTwo = function(num){ // also called function expression(funct stored in variables)
+var addTwo = function(num){ // also called function expression(funct stored in variables)
     return num + 2
 }
