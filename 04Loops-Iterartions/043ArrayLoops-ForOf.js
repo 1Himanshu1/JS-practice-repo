@@ -1,6 +1,8 @@
 // Array specialized loops: Kuch loops specialized hote hai for arrays
 // as most data from DN and API get returned in form of arrays
 
+// arrays : for of, etc
+// objects: for in
 //1. for of (can be implemented on "strings",{objects},[arrays], etc)
 
 // ["", "", ""]
@@ -35,7 +37,7 @@ map.set('PAK', "chutiya")
 //     console.log(key, ":-", value);
 // }
 
-// # for of on OBJECT (Object isnt iterable normally with ForOf)
+// # for of on- OBJECT (Object isnt iterable normally with ForOf)
 // const myObject = {
 //     game1: 'NFS',
 //     game2: 'Spiderman'
