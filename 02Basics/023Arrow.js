@@ -45,7 +45,7 @@ function chai(){
 // }
 // arrow()
 
-// 3. Basic (Explicit return, return keyword is used)
+// 3. Basic (Explicit return, return keyword is used) // yaha ek SCOPE OPEN ho jata hai
 // () => {}  basic arrow function, return statement is used when { } is used
 const add = (num1,num2) => {
     return num1 + num2 
