@@ -1,0 +1,11 @@
+inspect -> log(window);
+        [object]
+
+        so it will have multiple methods
+        1 imp: log(window.document) or console.dir(document)
+# furthermore there are documnet methods that are useful
+
+- document.links -> gives HTML collection
+
+link for details and IMAGE representation of DOM 
+-> https://www.geeksforgeeks.org/dom-document-object-model/
