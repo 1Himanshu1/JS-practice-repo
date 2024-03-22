@@ -9,3 +9,65 @@ inspect -> log(window);
 
 link for details and IMAGE representation of DOM 
 -> https://www.geeksforgeeks.org/dom-document-object-model/
+
+----------- SELECTORS ---------
+
+I-> document.getElementById('')
+
+1. getElementById('id').id/className // gives id/class of the selected element
+
+2. getElementById('id').getAttribute('class') // gives class of the selected element by 'id'
+
+3. getElementById('id').setAttribute('class', 'newClass') // sets new class to the old class attached to the selected element by 'id'
+   Note: This will overwrite the prev. class, so if you want to give 2 or more classes to same ele. then you will write it as
+
+4. getElementById('id').setAttribute('class', 'newClass oldClass')
+
+5. const title = getElementById('id') // u can store it in a variable
+   title.style.background-color = "blue";
+   title.style.padding/etc = "15px"
+
+6. title.textContent; // it will give all the text values even if its display is none
+  title.innerText; // it will show only texts that are visible
+  title.innerHTML; // this also includes HTML tags that are inside the text content
+
+7. 
+
+II-> document.querySelector('h3/.class/#id') // it will only give the first element that correspponds to the given querySelector('e.g,h2)
+
+1. document.querySelector('input[type="password"]') // elements ke Attribute bhi use kar skte hai to target a particular values
+
+2. document.querySelector(p:first-child)
+
+3. <ul>
+        <li>
+        <li>
+</ul>
+   
+   const myUl = document.querySelector('ul')
+-  myUl.querySelector(li).style.backgroundColor = "green";
+-  myUl.querySelector(li).style.padding = "10px";
+-  myUl.querySelector(li).innerText = "LAMPAT";
+
+III-> document.querySelectorAll('h3/.class/#id/li') // it will give all elements that correspponds to the given querySelector('e.g,h2)
+
+1. document.querySelectorAll('li') // returns a "NODELIST"(similar to array but not pure array)
+
+2. U can select ele at index by-
+       let temp = document.querySelectorAll('li')
+        temp[0].style.color = "green"; // this will WORK
+        temp.style.color = "green"; // this will NOT WORK even if there is only 1 value in it, we have to use [index]
+    
+    Note:
+    1. array methods do not work in it (exception:forEach works in this)
+        e,g, temp.forEach( (ele)=>{ ele.style.color = "blue"});
+    2. You can change Nodelist to ARRAY explicitly to get array methods
+        e.g, Array.from(') 
+
+IV-> document.getElementByClassName('heading') // returns a "HTMLCollection" -> not array
+    
+    NOTE:
+
+    let tempList = document.getElementByClassName('heading');
+    1. You can change HTMLCollection to ARRAY explicitly to get array methods
+        e.g, Array.from('tempList'); // u get all array ,ethods (map,forEach,etc)
