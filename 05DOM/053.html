@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create NODELISTZ</title> 
+    
+</head>
+<body>
+    
+</body>
+
+<script>
+    // #
+    const ele = document.createElement('div');
+    // this will not be shown on page automatically ,this div resides in the memory till we tell document to attach this div to itself
+    console.log(ele);
+
+    // # Imp Attributes 
+    ele.className = "main";
+    ele.id = Math.round(Math.random()*10 + 1);
+
+    // # sets new attributes
+    ele.setAttribute("title", "generator")
+    ele.style.backgroundColor = "green"
+    ele.style.padding = "10px"
+
+    // #
+    // all attibutes starting with (dot)-> .(Attribues), overwrite the original content by getting it before overwritting
+    ele.innerText = "Hello" 
+
+    // this approach directly attaches new value to original without getting it beforehand
+    const txt = document.createTextNode("Chai")
+    ele.appendChild(txt);
+
+    // # Attach ele to document body
+    document.body.appendChild(ele);
+
+</script>
+</html>

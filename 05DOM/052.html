@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: bisque;">
+    <div class="parent">
+        <div class="day">Mon</div>
+        <div class="day">Tues</div>
+        <div class="day">Wed</div>
+        <div class="day">Thurs</div>
+    </div>
+</body>
+<script>
+    // # 
+    const parent = document.querySelector(".parent");
+    // console.log(parent); 
+    // console.log(parent.children); // interesting property
+    // console.log(parent.children[0]);
+    // console.log(parent.children[0].innerHTML);
+
+    // #
+    for (let i = 0; i < parent.children.length; i++) { // as parent.children gives HTMLCollection which is similar tot array so we can use basic for loop on that
+        console.log(parent.children[i].innerHTML);
+    }
+
+    // #
+    let child = parent.children;
+    child[1].style.color = "blue";
+
+    // # imp properties
+    
+    // 1.parent se child
+    // console.log(parent.firstElementChild); 
+    // console.log(parent.lastElementChild);
+    // 2. child se parent
+    const day1 = document.querySelector('.day')
+    // console.log(day1);
+    // querySelector is expensive as it traverses the whole tree on each call
+    // so to minimize it 
+    // console.log(day1.parentElement);
+    // console.log(day1.nextElementSibling);
+
+    // #
+    // Note: Important discussion about .childNodes -> gives NodeList.
+    // A nodelist is a collection of document nodes which includes text nodes , attribute nodes and element nodes also comment node.
+    // A line break is also counted in nodelist but only first one (continues line breaks are ignored). All subsequent line breaks must be attached along with some other childNodes to be counted
+    console.log("Nodes: ", parent.childNodes);
+
+    // # creating NodeList
+    // in next File - 053
+</script>
+</html>
