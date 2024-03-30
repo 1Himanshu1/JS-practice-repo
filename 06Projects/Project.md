@@ -35,7 +35,7 @@ buttons.forEach( (btn)=>{
 
 ```
 
-## Project 1
+## Project 2
 
 ```javascript
   const form = document.querySelector("form");
