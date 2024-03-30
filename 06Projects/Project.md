@@ -34,3 +34,37 @@ buttons.forEach( (btn)=>{
 } )
 
 ```
+
+## Project 1
+
+```javascript
+  const form = document.querySelector("form");
+// post or get type sumission gets added in URL, to prevent(hide) this we use "preventDefault"
+
+// const height = parseInt(document.querySelector("#height").value); 
+// taking height/weight globally will inject it with empty value as the xcript is loaded immediately when a awebpage is loaded
+form.addEventListener("submit", function(e){
+  e.preventDefault()
+  const height = parseInt(document.querySelector("#height").value);
+  const weight = parseInt(document.querySelector("#weight").value);
+  const result =  document.getElementById("results");
+  const wtCheck = document.getElementById("wtCheck");
+
+  if(height === '' || height < 0 || isNaN(height)){
+    result.innerHTML = `Enter Valid Height`;
+  } else if ((weight === '' || weight < 0 || isNaN(weight))){
+    result.innerHTML = `Enter Valid weight`;
+  } else{
+    const bmi = (weight / ( (height*height)/10000)).toFixed(3);
+    result.innerHTML = `${bmi}`
+    
+    if(bmi>24.9){
+      wtCheck.innerHTML = "Overweight";
+    } else if (bmi<18.6){
+      wtCheck.innerHTML = "Underweight";
+    } else {
+        wtCheck.innerHTML = "Normal Nigga";
+    }
+  }
+})
+```
