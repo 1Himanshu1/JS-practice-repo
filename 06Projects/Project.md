@@ -1,6 +1,6 @@
 # PROJECTS
 
-## Project 1
+## Project 1 -- BACKGROUND COLOR SELECTOR
 
 ```javascript
 const buttons = document.querySelectorAll(".button");
@@ -35,7 +35,7 @@ buttons.forEach( (btn)=>{
 
 ```
 
-## Project 2
+## Project 2 -- BMI CALCULATOR
 
 ```javascript
   const form = document.querySelector("form");
@@ -69,7 +69,7 @@ form.addEventListener("submit", function(e){
 })
 ```
 
-## Project 3
+## Project 3 -- CLOCK
 
 ```javascript
 const clock =  document.getElementById('clock');
@@ -84,7 +84,7 @@ setInterval(function(){
 
 ```
 
-## Project 4
+## Project 4 -- NUMBER GUESSER
 
 ```javascript
 let number = parseInt(Math.random() * 100) + 1;
