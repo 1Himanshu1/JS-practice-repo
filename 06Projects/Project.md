@@ -68,3 +68,18 @@ form.addEventListener("submit", function(e){
   }
 })
 ```
+
+## Project 3
+
+```javascript
+const clock =  document.getElementById('clock');
+// let date = new Date();
+// console.log(date.toLocaleTimeString());
+
+// for running this like a clock(continously), use -> setInterval(method, interval(in ms))
+setInterval(function(){
+  let date = new Date();
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+
+```
