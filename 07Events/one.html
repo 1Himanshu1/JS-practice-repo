@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    /* Note:
+    -> Js Events runs sequentially (with few exceptions).
+    -> Exception - 1. Async is used to run Js code Asynchrounosly 
+                   2. Browser events
+    -> Browser events are invoked on some activity ('click', 'hover')
+    -> use 'addEventListeners' : 
+        provides PROPAGATION ability.
+        e.g, document.getElementById('google').addEventListener('click',function(e){
+        }, false[third parameter: event bubbling] )
+     */
+    // 1. Not a good practice
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+
+    // 2. Old methods/ libraries
+    // attachEvent()
+    // jQuery - on
+
+    // 3. Important '(event)-objects' to know for Interviews
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // 4. Good PRACTICE to add events to elements using addEvent Listeners
+
+    // 5. EVENT BUBBLING (false) AND CAPTURING (true) -  true/false 3rd parameter of eventListeners
+        // Bubbling - bottom to top event propagation
+        // Capturing - top to bottom event propagation
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+    
+
+    // 6. preventDefault to prevent default behaviour of that element
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault();
+        e.stopPropagation()
+        console.log("google clicked");
+    }, false)
+   
+    // 7. event SpillOver
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        //e.target.parentNode
+        if (e.target.tagName === 'IMG') { // check to prevent removing whole UL when click list
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    
+        
+    },false)
+    
+    //removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>
