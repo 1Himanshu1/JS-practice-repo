@@ -1,0 +1,52 @@
+1. ASYNC JS (base of concepts like:-)
+-> Promise
+-> Async/Await
+-> etc
+
+2. JS (Default)
+1. Synchronous
+2. Single Threaded
+
+3. EXECUTION CONTEXT
+-> Execute one line of code at a time
+e.g,
+
+   |
+   |-> console.log(1)
+   |
+   |-> console.log(2)
+   |
+ THREAD-1
+
+    each Operation waits for the last one to complete before executing itself
+
+
+4. CALL STACK
+  MEMORY HEAP
+
+5. BLOCKING CODE VS NON-BLOCKING CODE
+    i. BLOCKING CODE
+        blocks the flow of program
+        e.g, READ FILE Synchronously
+    ii. NON-BLOCKING CODE
+        does not block the flow of program
+        e.g, READ FILE ASYNC
+Use Case: It depend on our use case whether we use blocking or non-blocking code.
+
+6. EVENT LOOP
+
+    <1> JS ENGINE:            |->   <2> WEB/NODE API:
+                          |
+    mem. HEAP             |     DOM API(only in web api) |
+                    CALL  |     setInterval              |-> REGISTER CALLBACK (C.B)
+    Call STACK -----------|     setTimeout               |        |
+       ^  ^                      fetch() |-> PROMISE              |        
+       |  |                                    |                  |
+       |  |              (PROMISE QUEUE)       |                  |
+       |  |             __________________     |                  |
+       |  |--- HIGH --- \ C.B1, C.B2,...  \  <-|                  |
+       |      PRIORITY   -------------------_________________     |
+       |<--------------------------------- \ C.B1, C.B2,...  \  <-|
+                                            -------------------
+                Add to Call stack             <3> (TASK QUEUE)
+    
