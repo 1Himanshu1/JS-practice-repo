@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout() </title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <h2>setTimeout()</h2>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    /* 1. setTimeout( handler function, time) => Browser API
+        -> it is a method, calls an API
+        -> runs one time only after a fixed interval of time
+
+       2. clearTimeout( setTimout reference) => clears a setTimeout function
+       3. Handler: it is a callback function or a reference to any function
+
+    */
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+
+    const changeMe = setTimeout(changeText, 2000)
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED")
+    })
+</script>
+</html>
