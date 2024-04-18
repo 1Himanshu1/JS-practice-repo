@@ -186,3 +186,37 @@ function endGame(){
 
 
 ```
+
+## Project 6 -- RANDOM COLOR GENERATOR (CONTINUOS)
+
+```javascript
+
+const randomColor = function (){
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for(let i=0; i<6; i++){
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+const setColor = function (){
+  document.body.style.backgroundColor = randomColor();
+}
+
+let newColor;
+
+document.querySelector('#start').addEventListener('click', function(){
+  if(!newColor) { // if newcolor is null then only new setinterval works
+    newColor = setInterval(setColor, 2000)
+  console.log('Start');
+  }
+});
+
+document.querySelector('#stop').addEventListener('click', function(){
+  clearInterval(newColor);
+  newColor = null; // flush out the memory after use, increase space complexity
+  console.log('Stopped');
+})
+
+```
