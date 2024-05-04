@@ -24,9 +24,9 @@
     xhr.onreadystatechange = function(){ // onreadyStateChange continously monitors the state changes
         console.log(xhr.readyState); // readyState -> gives the state of your api req
         if (xhr.readyState === 4) {
-            const data = JSON.parse(this.responseText)  // json.parse => string data ko JSON format (it is an object) me convert kr deta hai
+            const data = JSON.parse(this.responseText)  // json.parse => string data ko JSON format (it is an object) me convert kr deta hai // this -> current context ko refer krta hai
             console.log(typeof data); // default STRING type ka data aata hai
-            console.log(data.followers);
+            console.log(data.followers); // json object me properties access kr skte hai
         }
     }
     xhr.send(); // Used to call open()-> it dont call by itself (Read above states in html file)
