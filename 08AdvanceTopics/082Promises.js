@@ -95,7 +95,7 @@ consumePromiseFive()
 
 //getAllUsers()
 
-// 2 fetch faster than all?
+// 2 fetch faster than all? Because Fetch calls are registered in high-priority queue
 fetch('https://api.github.com/users/hiteshchoudhary')
 .then((response) => {
     return response.json()
@@ -105,5 +105,11 @@ fetch('https://api.github.com/users/hiteshchoudhary')
 })
 .catch((error) => console.log(error))
 
+
+// fetch("url")
+// .then()
+// .then()
+// .catch()
+// .finally()
 // promise.all
 // yes this is also available, kuch reading aap b kro.
