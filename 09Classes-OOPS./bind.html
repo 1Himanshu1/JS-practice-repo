@@ -1,0 +1,41 @@
+<!-- Bind - Old way in React -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this)) // bind(this)-> all the var/functions get attached to this handleclick along with its reference(i.e button that called the event on click)
+                // as normally the var/functions doesnt get attached to the calling event automatically due to loss of reference
+
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
+
+
+
+<!-- 
+
+I found an Interesting concept regarding 'this' that it does not overrides the content of 'this' in callback function:-
+In JavaScript, the bind() method creates a new function that, when invoked, has its this value explicitly set to the value provided as an argument to bind(). It doesn't override this in the original function; rather, it creates a new function with a bound context. -->
