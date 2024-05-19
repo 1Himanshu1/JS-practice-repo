@@ -1,7 +1,7 @@
 // JS Engine optimization Concepts
-
+ // JsVU
 const myArr = []
-%DebugPrint(myArr); // v8 engine runs this
+%DebugPrint(myArr); // v8-debug engine runs this
  
 // Types of Arrays
 // 1.Continious( or packed i.e, no missin ele), 2.Holey(missing elements) array
